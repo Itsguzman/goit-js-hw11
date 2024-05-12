@@ -81,7 +81,7 @@ body {
   display: block;
 }
 
-.divLoad {
+/* .divLoad {
   width: 100%;
   text-align: center;
   display: none;
@@ -90,7 +90,7 @@ body {
 .loadBtn {
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 /* loader here */
 .loader {

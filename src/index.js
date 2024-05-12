@@ -6,8 +6,8 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const gallery = document.querySelector('.gallery');
 const submitQuery = document.getElementById('search-form');
 const listLoader = document.querySelector('.loader');
-const loadMoreBtn = document.getElementById('loadMore');
-let currentPage = 1; // Reset current page on new search
+// const loadMoreBtn = document.getElementById('loadMore');
+let currentPage = 1;
 let countMe = 0;
 
 async function searchNow(e) {
@@ -76,18 +76,20 @@ submitQuery.addEventListener('submit', e => {
   searchNow(e);
 });
 
-loadMoreBtn.addEventListener('click', e => {
-  e.preventDefault();
-  currentPage++;
-  searchNow(e);
-});
+// loadMoreBtn.addEventListener('click', e => {
+//   e.preventDefault();
+//   currentPage++;
+//   searchNow(e);
+// });
 
 function isBottom() {
   return window.innerHeight + window.scrollY >= document.body.offsetHeight;
 }
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', e => {
   if (isBottom()) {
-    loadMoreBtn.click();
+    // loadMoreBtn.click();
+    currentPage++;
+    searchNow(e);
   }
 });
